@@ -54,7 +54,7 @@ namespace CuaHangHoaQua.Services
             if (Id == thucPhamResponse.Id)
             {
                 var update = _mapper.Map<ThucPham>(thucPhamResponse);
-                _thucphamRepository.Edit(update);
+                await _thucphamRepository.Edit(update);
             }
         }
     }

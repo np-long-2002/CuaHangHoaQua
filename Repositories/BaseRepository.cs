@@ -1,4 +1,6 @@
 ﻿using CuaHangHoaQua.Data;
+using Microsoft.AspNetCore.Identity;
+using System.Security.Cryptography;
 
 namespace CuaHangHoaQua.Repositories
 {

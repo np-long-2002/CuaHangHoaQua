@@ -1,9 +1,10 @@
 ﻿using CuaHangHoaQua.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace CuaHangHoaQua.Data
 {
-    public class DataContext : DbContext
+    public class DataContext : IdentityDbContext<User>
     {
         public DataContext() { }
         public DataContext(DbContextOptions<DataContext> options):base(options) { }
@@ -32,6 +33,7 @@ namespace CuaHangHoaQua.Data
         #endregion
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             //LoaiThucPham voi Thuc Pham
             modelBuilder.Entity<LoaiThucPham_ThucPham>()
                 .HasKey(tp => new {tp.LoaiThucPhamId,tp.ThucPhamId});

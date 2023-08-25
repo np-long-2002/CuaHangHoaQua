@@ -39,8 +39,8 @@ namespace CuaHangHoaQua.Services
 
         public async Task<ViTri> GetViTri(int Id)
         {
-            var vt = await _viTriRepository.GetId(Id);
-            return vt;
+             
+            return await _viTriRepository.GetId(Id);
         }
 
         public async Task<ICollection<ViTri>> GetViTris()
@@ -54,7 +54,7 @@ namespace CuaHangHoaQua.Services
             if(Id == loai.Id)
             {
                 var update = _mapper.Map<ViTri>(loai);
-                _viTriRepository.Edit(update);
+                await _viTriRepository.Edit(update);
             }
         }
         
